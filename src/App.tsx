@@ -41,7 +41,12 @@ const stats = {
 
   return (
     <>
-    <div className='space-y-2'>
+    <div className="min-h-screen bg-gray-100 px-4 py-10">
+      <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6 space-y-6">
+        <h1 className="text-xl text-center font-semibold text-gray-800 mb-4">
+  Paragraph Word Manage :
+</h1>
+
       <TextInput
         onTextChange={handleTextChange}
         placeholder="Start typing..."
@@ -57,6 +62,7 @@ const stats = {
        showReadingTime={true}
         
        />
+       </div>
 
 </div>
       

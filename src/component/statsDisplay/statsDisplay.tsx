@@ -13,7 +13,7 @@ export const StatDisplay: React.FC<StatsDisplayProps> = ({ stats, showReadingTim
   }
 
   return (
-    <div className="mt-2 bg-gray-50 rounded-lg p-4 shadow-inner text-sm text-gray-800 space-y-2">
+    <div className="bg-gray-50 rounded-lg p-4 shadow-inner text-sm text-gray-800 grid grid-cols-2 gap-y-2 gap-x-4">
       <p>
         <span className="font-semibold">Status:</span> {getStatusMessage()}
       </p>

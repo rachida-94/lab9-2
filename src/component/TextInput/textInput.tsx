@@ -7,9 +7,11 @@ export const TextInput:React.FC<TextInputProps>=({
     initialValue=''
 }) =>{
     return (
-        <div className="min-h-screen bg-gray-100 px-4 py-10" >
+        <div >
+            
         <textarea
-        className="w-full min-h-[100px] p-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-gray-800 mb-2"
+         className="w-full min-h-[100px] p-4 border border-gray-300 rounded-md shadow-sm focus:outline-none
+         focus:ring-2 focus:ring-blue-500 resize-none text-gray-800 mb-2"
 
          placeholder={placeholder}
         defaultValue={initialValue}
