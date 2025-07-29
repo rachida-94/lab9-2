@@ -4,38 +4,22 @@ import { type TextStatsProps } from "../../types";
     stats:TextStatsProps
     limits?: characterCounterProps
  }
-export const TextStats: React.FC<TextStatsProps> = ({
-  characterCount,
-  wordCount,
-  readingTime,
-}) => {
-  return (
-    <div>
-      <p>Word Count: {wordCount}</p>
-      <p>Character Count: {characterCount}</p>
-      <p>Reading Time: {readingTime} min</p>
-    </div>
-  );
-};
+
 
 export const CharacterCounter: React.FC<Props> = ({ stats, limits }) => {
-  const { wordCount, characterCount, readingTime } = stats;
-  const { minWords, maxWords, targetReadingTime } = limits || {};
+  const { wordCount, readingTime } = stats;
+  const { minWords=25, maxWords=100, targetReadingTime } = limits || {};
 
   return (
-    <div>
-      <TextStats
-        characterCount={characterCount}
-        wordCount={wordCount}
-        readingTime={readingTime}
-      />
+    <div className="mt-0 bg-red-50 rounded-lg p-4 shadow-inner text-sm text-red-700 space-y-2">
 
       {minWords !== undefined && wordCount < minWords && (
-        <p >Minimum: {minWords} words</p>
+        <p >
+          <span className="font-semibold">Minimum:</span> {minWords} words</p>
       )}
 
       {maxWords !== undefined && wordCount > maxWords && (
-        <p >Maximum: {maxWords} words</p>
+        <p ><span className="font-semibold">Maximum:</span> {maxWords} words</p>
       )}
 
       {targetReadingTime !== undefined && readingTime > targetReadingTime && (

@@ -1,5 +1,7 @@
+import './index.css'
 import { TextInput } from "./component/TextInput/textInput"
 import { useState } from "react";
+import { StatDisplay } from './component/statsDisplay/statsDisplay';
 
 import { CharacterCounter } from "./component/characterCounter/characterCounter";
 function App() {
@@ -30,8 +32,8 @@ const stats = {
   };
 
   const limits = {
-    minWords: 100,
-    maxWords: 300,
+    minWords: 25,
+    maxWords: 200,
     targetReadingTime: 2,
   };
 
@@ -39,7 +41,7 @@ const stats = {
 
   return (
     <>
-    
+    <div className='space-y-2'>
       <TextInput
         onTextChange={handleTextChange}
         placeholder="Start typing..."
@@ -50,7 +52,14 @@ const stats = {
       <CharacterCounter
       stats={stats}
       limits={limits}/>
+      <StatDisplay 
+      stats={stats}
+       showReadingTime={true}
+        
+       />
 
+</div>
+      
       
     </>
   )
